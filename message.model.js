@@ -24,4 +24,4 @@ class Message {
   }
 }
 //Exportando a classe
-module.exports = Message;
+export default Message;
