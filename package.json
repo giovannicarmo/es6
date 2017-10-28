@@ -6,8 +6,12 @@
   "scripts": {
     "start": "http-server",
     "lint": "eslint",
-    "build": "webpack --watch --devtool source-map",
-    "nodemon": "nodemon"
+    "build": "NODE_ENV=development webpack",
+    "build:prod": "webpack",
+    "nodemon": "nodemon",
+    "serve": "webpack-dev-server",
+    "express": "NODE_ENV=development PORT=8080 node server.js ",
+    "express:prod": "npm run build:prod && node server.js" 
   },
   "repository": {
     "type": "git",
@@ -31,8 +35,11 @@
     "eslint": "^3.14.0",
     "eslint-config-airbnb-base": "^11.0.1",
     "eslint-plugin-import": "^2.2.0",
+    "express": "^4.16.2",
     "http-server": "^0.9.0",
     "nodemon": "^1.11.0",
-    "webpack": "^2.2.1"
+    "webpack": "^2.2.1",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-dev-server": "^2.9.3"
   }
 }
